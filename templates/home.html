@@ -21,10 +21,45 @@
   <!-- Shop Section -->
   <section id="shop" class="py-20 max-w-7xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-red-400 mb-12 text-center">Our Collection</h2>
-    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {% include 'products/products.html' %}
+    <div id="product-list" class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {% include 'products/partials/products.html' %}
     </div>
+    <!-- Load More Button -->
+    {% if page_obj.has_next %}
+    <div id="load-more-container" class="text-center mt-8">
+      <button
+        hx-get="?page={{ page_obj.next_page_number }}"
+        hx-target="#product-list"
+        hx-swap="beforeend"
+        hx-indicator="#loading-indicator"
+        class="px-6 py-3 bg-red-500 text-white rounded-xl hover:bg-red-600 transition-all duration-300"
+      >
+        Load More
+      </button>
+
+      <!-- Loading shimmer -->
+      <div id="loading-indicator" class="hidden mt-4">
+        <div class="animate-pulse space-y-4">
+          {% for _ in "1234" %}
+          <div class="h-72 bg-gray-800 rounded-3xl"></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
   </section>
+
+  <!-- <div class="pagination">
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}">prev</a>
+    {% endif %}
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">>></a>
+    {% endif %}
+  </div> -->
 
   <!-- About Section -->
   <section id="about" class="py-20 bg-neutral-900">
