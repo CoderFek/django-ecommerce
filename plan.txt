@@ -1,0 +1,13 @@
+Cleaning dataset and populating the database ✅
+Products app ✅
+Ui design and details page ✅
+pagination
+user authentication
+user profile
+Ratings
+Cart app
+Order functionaity and shipping
+Payment integration
+Search functionality
+email integration
+deployment

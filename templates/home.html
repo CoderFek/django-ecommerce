@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" 
+           style="background-image: url('https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-red-400 drop-shadow-lg">
+        Discover Fine Wines
+      </h1>
+      <p class="mt-6 text-lg text-gray-300 max-w-xl mx-auto">
+        Curated wines from Europe’s hidden vineyards delivered to your doorstep.
+      </p>
+      <a href="#shop" class="mt-8 inline-block px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition-all duration-300">
+        Explore Collection
+      </a>
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop" class="py-20 max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-red-400 mb-12 text-center">Our Collection</h2>
+    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {% include 'products/products.html' %}
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-neutral-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-red-400 mb-6">About Us</h2>
+      <p class="text-gray-300 leading-relaxed">
+        At SlavicWines, we believe every bottle tells a story. We handpick wines from family-owned vineyards across Europe, ensuring authenticity, quality, and passion in every sip.
+      </p>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slavic Wines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-950 text-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-neutral-900/90 backdrop-blur-lg border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold tracking-wide text-red-500">SlavicWines</a>
+            <ul class="flex space-x-8 text-gray-300">
+                <li><a href="/" class="hover:text-red-400 transition">Home</a></li>
+                <li><a href="/#shop" class="hover:text-red-400 transition">Shop</a></li>
+                <li><a href="/#about" class="hover:text-red-400 transition">About</a></li>
+                <li><a href="/#contact" class="hover:text-red-400 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-neutral-950 border-t border-neutral-800 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-400 text-sm">
+            © 2025 SlavicWines. All rights reserved.  
+            <div class="mt-3 space-x-4">
+                <a href="#" class="hover:text-red-400">Instagram</a>
+                <a href="#" class="hover:text-red-400">Facebook</a>
+                <a href="#" class="hover:text-red-400">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

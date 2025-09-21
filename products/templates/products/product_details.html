@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- Product Section -->
+<section class="pt-32 pb-20 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12">
+  <!-- Glass-style Image -->
+  <div class="flex-1 flex justify-center">
+    <div class="backdrop-blur-xl bg-neutral-900/70 border border-neutral-700 rounded-2xl p-8 shadow-lg">
+      <img src="https://mockupfree.net/wp-content/uploads/2023/10/02-9-1025x1536.jpg"
+           alt="Wine Bottle"
+           class="max-h-[500px] object-contain">
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="flex-1 flex flex-col justify-center space-y-6">
+    <h2 class="text-4xl font-bold text-white">{{ product.title }}</h2>
+    <div class="flex flex-wrap gap-3 text-sm">
+      <span class="px-3 py-1 bg-neutral-800 border border-neutral-700 text-gray-300 rounded-full">Merlot</span>
+      <span class="px-3 py-1 bg-neutral-800 border border-neutral-700 text-gray-300 rounded-full">{{product.province}}, {{product.country_of_origin}}</span>
+      <span class="px-3 py-1 bg-neutral-800 border border-neutral-700 text-gray-300 rounded-full">2014</span>
+    </div>
+    <p class="text-gray-300 text-lg leading-relaxed">
+      A velvety red wine with notes of plum, oak, and dark chocolate. Smooth tannins with a lasting finish.
+    </p>
+    <p class="text-2xl font-bold text-white">$34.99</p>
+    <button class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl shadow-md transition">
+      Add to Cart
+    </button>
+  </div>
+</section>
+
+<!-- Tabs -->
+<section class="max-w-5xl mx-auto px-6">
+  <div class="border-b border-neutral-700 flex gap-8 text-sm uppercase tracking-wide">
+    <button class="pb-3 border-b-2 border-red-500 text-red-400">About</button>
+    <button class="pb-3 hover:text-red-400 hover:border-b-2 hover:border-red-500 text-gray-300">Pairing</button>
+    <button class="pb-3 hover:text-red-400 hover:border-b-2 hover:border-red-500 text-gray-300">Reviews</button>
+  </div>
+  <div class="py-6 text-gray-300">
+    <p>
+      {{ product.description }}
+    </p>
+  </div>
+</section>
+
+<!-- Similar Products -->
+<section class="py-20 max-w-7xl mx-auto px-6">
+  <h3 class="text-2xl font-bold text-white mb-8">You may also like</h3>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="backdrop-blur-md bg-neutral-900/70 border border-neutral-700 p-4 rounded-xl shadow hover:scale-105 transition">
+      <img src="https://mockupfree.net/wp-content/uploads/2023/10/02-9-1025x1536.jpg"
+           class="h-56 mx-auto object-contain" alt="Similar Wine">
+      <p class="mt-4 text-center text-sm text-gray-300">Stobi 2011 Macedon Pinot Noir</p>
+    </div>
+    <div class="backdrop-blur-md bg-neutral-900/70 border border-neutral-700 p-4 rounded-xl shadow hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+           class="h-56 mx-auto object-contain" alt="Similar Wine">
+      <p class="mt-4 text-center text-sm text-gray-300">Pullus 2011 Dry Red Pinot Noir</p>
+    </div>
+    <!-- Add more product cards -->
+  </div>
+</section>
+
+{% endblock %}
